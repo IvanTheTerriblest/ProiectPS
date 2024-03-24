@@ -40,8 +40,6 @@ public class RecipesConfig {
                     tomato,cucumber,cabbage), new Time(0,10,0));
             omlett = recipesService.saveRecipes(omlett);
             salad = recipesService.saveRecipes(salad);
-            omlett = recipesService.saveRecipes(omlett);
-            salad = recipesService.saveRecipes(salad);
 
         };
     }

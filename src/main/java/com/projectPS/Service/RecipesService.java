@@ -3,10 +3,14 @@ package com.projectPS.Service;
 import com.projectPS.Model.Ingredients;
 import com.projectPS.Model.Recipes;
 import com.projectPS.Repository.RecipesRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Time;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class RecipesService {
@@ -40,5 +44,22 @@ public class RecipesService {
 
         }
         recipesRepository.deleteById(recipeId);
+    }
+
+    @Transactional
+    public void updateRecipe(Long recipeId,
+                                 String name,
+                                 List<Ingredients> ingredientsList ,
+                                 Time timeForCooking) {
+        Recipes recipe = recipesRepository.findById(recipeId).orElseThrow();
+        if (name !=null && name.length()>0 && !Objects.equals(recipe.getName(),name)){
+            recipe.setName(name);
+        }
+        if (ingredientsList !=null && !Objects.equals(recipe.getIngredientsList(),ingredientsList)){
+            recipe.setIngredientsList(ingredientsList);
+        }
+        if (timeForCooking !=null && !Objects.equals(recipe.getTimeForCooking(),timeForCooking)){
+            recipe.setTimeForCooking(timeForCooking);
+        }
     }
 }

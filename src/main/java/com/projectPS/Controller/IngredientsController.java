@@ -34,9 +34,6 @@ public class IngredientsController {
 
     @PutMapping(path = "{ingredientId}")
     public void updateIngredient(@PathVariable("ingredientId") Long ingredientId,
-//                                 @RequestBody(required = false) String name,
-//                                 @RequestBody(required = false) LocalDate expirationDate,
-//                                 @RequestBody(required = false) Integer quantity)
                                 @RequestBody Ingredients ingredient)
                                  {
         ingredientsService.updateIngredient(ingredientId,ingredient.getName(),

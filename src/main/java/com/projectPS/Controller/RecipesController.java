@@ -34,4 +34,12 @@ public class RecipesController {
         recipesService.deleteRecipe(recipeId);
     }
 
+    @PutMapping(path = "{recipeId}")
+    public void updateRecipe(@PathVariable("recipeId") Long recipeId,
+                                 @RequestBody Recipes recipe)
+    {
+        recipesService.updateRecipe(recipeId,recipe.getName()
+                ,recipe.getIngredientsList(),recipe.getTimeForCooking());
+    }
+
 }
