@@ -21,9 +21,22 @@ public class RecipesService {
         this.recipesRepository = recipesRepository;
     }
 
+    /**
+     * Return all recipes.
+     *
+     * @return a list of all recipes
+     */
+
     public List<Recipes> getRecipes(){
         return recipesRepository.findAll();
     }
+
+    /**
+     * Saves a recipe.
+     *
+     * @param recipes the recipe to be saved
+     * @return the saved recipe
+     */
     public Recipes saveRecipes(Recipes recipes){
         Recipes tmp=recipesRepository.findByName(recipes.getName());
         if(tmp == null){
@@ -33,9 +46,22 @@ public class RecipesService {
 
     }
 
+    /**
+     * Adds a recipe.
+     *
+     * @param recipes the recipe to be added
+     * @return the added recipe
+     */
+
     public Recipes addRecipes(Recipes recipes) {
         return saveRecipes(recipes);
     }
+
+    /**
+     * Deletes a recipe by ID.
+     *
+     * @param recipeId the ID of the recipe to be deleted
+     */
 
     public void deleteRecipe(Long recipeId) {
         boolean exists= recipesRepository.existsById(recipeId);
@@ -45,6 +71,15 @@ public class RecipesService {
         }
         recipesRepository.deleteById(recipeId);
     }
+
+    /**
+     * Updates a recipe.
+     *
+     * @param recipeId the ID of the recipe to be updated
+     * @param name the updated name of the recipe
+     * @param ingredientsList the updated list of ingredients of the recipe
+     * @param timeForCooking the updated time for cooking of the recipe
+     */
 
     @Transactional
     public void updateRecipe(Long recipeId,

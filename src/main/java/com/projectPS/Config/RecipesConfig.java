@@ -18,6 +18,13 @@ import java.util.List;
 
 @Configuration
 public class RecipesConfig {
+    /**
+     * Configures a CommandLineRunner bean to initialize and save initial data for Recipes and Ingredients.
+     *
+     * @param recipesService the service for managing Recipes
+     * @param service the service for managing Ingredients
+     * @return a CommandLineRunner bean to execute the initialization logic
+     */
     @Bean
     CommandLineRunner commandLineRunnerRecipes(RecipesService recipesService, IngredientsService service){
         return args -> {
