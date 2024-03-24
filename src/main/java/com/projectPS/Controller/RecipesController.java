@@ -1,11 +1,10 @@
 package com.projectPS.Controller;
 
+import com.projectPS.Model.Ingredients;
 import com.projectPS.Model.Recipes;
 import com.projectPS.Service.RecipesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +22,16 @@ public class RecipesController {
     @GetMapping
     public List<Recipes> getRecipes(){
         return recipesService.getRecipes();
+    }
+
+    @PostMapping
+    public Recipes addRecipes(@RequestBody Recipes recipes){
+        return recipesService.addRecipes(recipes);
+    }
+
+    @DeleteMapping(path = "{recipeId}")
+    public void deleteRecipe(@PathVariable("recipeId") Long recipeId){
+        recipesService.deleteRecipe(recipeId);
     }
 
 }

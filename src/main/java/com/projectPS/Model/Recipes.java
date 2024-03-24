@@ -27,7 +27,7 @@ public class Recipes {
     )
     private Long id;
     private String name;
-    @OneToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Ingredients> ingredientsList;
     private Time timeForCooking;
 

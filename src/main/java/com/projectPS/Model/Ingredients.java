@@ -22,6 +22,7 @@ public class Ingredients {
             generator = "ingredients_sequence"
     )
     private Long id;
+    @Column(unique = true)
     private String name;
     private LocalDate expirationDate;
     private Integer quantity;

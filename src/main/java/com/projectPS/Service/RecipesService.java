@@ -3,16 +3,15 @@ package com.projectPS.Service;
 import com.projectPS.Model.Ingredients;
 import com.projectPS.Model.Recipes;
 import com.projectPS.Repository.RecipesRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Time;
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 @Service
 public class RecipesService {
     private final RecipesRepository recipesRepository;
+    @Autowired
 
     public RecipesService(RecipesRepository recipesRepository) {
         this.recipesRepository = recipesRepository;
@@ -20,8 +19,26 @@ public class RecipesService {
 
     public List<Recipes> getRecipes(){
         return recipesRepository.findAll();
-//        return List.of(new Recipes(1L,"Omlett",List.of(
-//                new Ingredients(1L,"Egg", LocalDate.of(2024, Month.APRIL,6),2)),
-//                new Time(0,10,0)));
+    }
+    public Recipes saveRecipes(Recipes recipes){
+        Recipes tmp=recipesRepository.findByName(recipes.getName());
+        if(tmp == null){
+           return recipesRepository.save(recipes);
+        }
+        return tmp;
+
+    }
+
+    public Recipes addRecipes(Recipes recipes) {
+        return saveRecipes(recipes);
+    }
+
+    public void deleteRecipe(Long recipeId) {
+        boolean exists= recipesRepository.existsById(recipeId);
+        if (!exists){
+            throw new IllegalStateException("Recipe with id " + recipeId +"does not exist");
+
+        }
+        recipesRepository.deleteById(recipeId);
     }
 }
