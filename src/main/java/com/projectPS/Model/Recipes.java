@@ -32,11 +32,11 @@ public class Recipes {
     private Time timeForCooking;
 
 
-
-
-
-
-
+    public Recipes(String name, List<Ingredients> ingredientsList, Time timeForCooking) {
+        this.name = name;
+        this.ingredientsList = ingredientsList;
+        this.timeForCooking = timeForCooking;
+    }
 
     public List<Ingredients> getIngredientsList() {
         return ingredientsList;
@@ -53,4 +53,5 @@ public class Recipes {
     public void setTimeForCooking(Time timeForCooking) {
         this.timeForCooking = timeForCooking;
     }
+
 }

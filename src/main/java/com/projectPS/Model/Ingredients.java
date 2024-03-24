@@ -1,11 +1,9 @@
 package com.projectPS.Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import javax.management.ConstructorParameters;
 import java.time.LocalDate;
 @Data
 @NoArgsConstructor
@@ -28,4 +26,9 @@ public class Ingredients {
     private LocalDate expirationDate;
     private Integer quantity;
 
+    public Ingredients(String name, LocalDate expirationDate, Integer quantity) {
+        this.name = name;
+        this.expirationDate = expirationDate;
+        this.quantity = quantity;
+    }
 }
