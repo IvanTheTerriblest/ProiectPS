@@ -1,5 +1,6 @@
 package com.projectPS.Service;
 
+import com.projectPS.Contract.IngredientsContract;
 import com.projectPS.Model.Ingredients;
 import com.projectPS.Repository.IngredientsRepository;
 import jakarta.transaction.Transactional;
@@ -16,7 +17,7 @@ import java.util.Objects;
 
 @Service
 
-public class IngredientsService {
+public class IngredientsService implements IngredientsContract {
 
     private final IngredientsRepository ingredientsRepository;
     @Autowired

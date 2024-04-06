@@ -1,5 +1,6 @@
 package com.projectPS.Controller;
 
+import com.projectPS.Contract.IngredientsContract;
 import com.projectPS.Model.Ingredients;
 import com.projectPS.Service.IngredientsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +12,10 @@ import java.util.List;
 @RequestMapping(path = "/ingredients")
 
 public class IngredientsController {
-    private final IngredientsService ingredientsService;
+    private final IngredientsContract ingredientsService;
     @Autowired
 
-    public IngredientsController(IngredientsService ingredientsService) {
+    public IngredientsController(IngredientsContract ingredientsService) {
         this.ingredientsService = ingredientsService;
     }
 

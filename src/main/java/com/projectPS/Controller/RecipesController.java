@@ -1,5 +1,6 @@
 package com.projectPS.Controller;
 
+import com.projectPS.Contract.RecipesContract;
 import com.projectPS.Model.Ingredients;
 import com.projectPS.Model.Recipes;
 import com.projectPS.Service.RecipesService;
@@ -13,10 +14,10 @@ import java.util.List;
 
 public class RecipesController {
 
-    public final RecipesService recipesService;
+    public final RecipesContract recipesService;
     @Autowired
 
-    public RecipesController(RecipesService recipesService) {
+    public RecipesController(RecipesContract recipesService) {
         this.recipesService = recipesService;
     }
 

@@ -1,5 +1,6 @@
 package com.projectPS.Service;
 
+import com.projectPS.Contract.RecipesContract;
 import com.projectPS.Model.Ingredients;
 import com.projectPS.Model.Recipes;
 import com.projectPS.Repository.RecipesRepository;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class RecipesService {
+public class RecipesService implements RecipesContract {
     private final RecipesRepository recipesRepository;
     @Autowired
 
