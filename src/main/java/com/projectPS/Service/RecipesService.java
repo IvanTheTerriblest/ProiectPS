@@ -12,6 +12,7 @@ import java.sql.Time;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class RecipesService implements RecipesContract {
@@ -20,6 +21,9 @@ public class RecipesService implements RecipesContract {
 
     public RecipesService(RecipesRepository recipesRepository) {
         this.recipesRepository = recipesRepository;
+    }
+    public List<Recipes> findFastRecipes(){
+        return recipesRepository.findFastRecipes();
     }
 
     /**
@@ -30,6 +34,10 @@ public class RecipesService implements RecipesContract {
 
     public List<Recipes> getRecipes(){
         return recipesRepository.findAll();
+    }
+
+    public Optional<Recipes> findById(Long id){
+        return recipesRepository.findById(id);
     }
 
     /**

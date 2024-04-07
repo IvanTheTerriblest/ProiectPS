@@ -7,6 +7,7 @@ import jakarta.transaction.Transactional;
 import java.sql.Time;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public interface RecipesContract {
     public List<Recipes> getRecipes();
@@ -21,4 +22,8 @@ public interface RecipesContract {
                              String name,
                              List<Ingredients> ingredientsList ,
                              Time timeForCooking);
+
+    public List<Recipes> findFastRecipes();
+
+    public Optional<Recipes> findById(Long id);
 }

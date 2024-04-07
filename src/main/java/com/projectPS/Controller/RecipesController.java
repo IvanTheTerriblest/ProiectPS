@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/recipes")
@@ -29,6 +30,16 @@ public class RecipesController {
     @GetMapping
     public List<Recipes> getRecipes(){
         return recipesService.getRecipes();
+    }
+
+    @GetMapping(path="/fastFood")
+    public List<Recipes> findFastRecipes(){
+        return recipesService.findFastRecipes();
+    }
+
+    @GetMapping(path="{id}")
+    public Optional<Recipes> getRecipes(@PathVariable("id") Long recipesId){
+        return recipesService.findById(recipesId);
     }
 
     /**
@@ -53,6 +64,8 @@ public class RecipesController {
     public void deleteRecipe(@PathVariable("recipeId") Long recipeId){
         recipesService.deleteRecipe(recipeId);
     }
+
+
 
     /**
      * Updates an existing recipe.
