@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping(path = "/ingredients")
 
@@ -15,7 +18,7 @@ public class IngredientsController {
     private final IngredientsContract ingredientsService;
     @Autowired
 
-    public IngredientsController(IngredientsContract ingredientsService) {
+    public IngredientsController(IngredientsService ingredientsService) {
         this.ingredientsService = ingredientsService;
     }
 
@@ -28,6 +31,29 @@ public class IngredientsController {
     public List<Ingredients> getIngredients(){
         return ingredientsService.getIngredients();
     }
+
+    @GetMapping(path="{id}")
+    public Optional<Ingredients> getIngredient(@PathVariable("id") Long ingredientId){
+       return ingredientsService.findById(ingredientId);
+    }
+
+    @GetMapping(path="/nume/{name}")
+    public Ingredients getIngredientByName(@PathVariable("name") String name){
+        return ingredientsService.findByName(name);
+    }
+
+    @GetMapping(path="/data/{date}")
+    public List<Ingredients> getIngredientByName(@PathVariable("date") Date date){
+        return ingredientsService.findByExpirationDate(date);
+    }
+
+    @GetMapping(path="/expired")
+    public List<Ingredients> getExpiredIngredients(){
+        return ingredientsService.findExpiredIngredients();
+    }
+
+
+
 
     /**
      * Adds a new ingredient.

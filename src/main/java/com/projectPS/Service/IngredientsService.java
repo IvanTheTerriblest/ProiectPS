@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Service class for managing ingredients.
@@ -60,9 +62,22 @@ public class IngredientsService implements IngredientsContract {
      * @return the found ingredient, or null if not found
      */
 
-
     public Ingredients findByName(String name){
         return ingredientsRepository.findByName(name);
+    }
+
+
+
+    public Optional<Ingredients> findById(Long id){
+        return ingredientsRepository.findById(id);
+    }
+
+    @Override
+    public List<Ingredients> findByExpirationDate(Date date) {
+        return ingredientsRepository.findByExpirationDate(date);
+    }
+    public List<Ingredients> findExpiredIngredients() {
+        return ingredientsRepository.findExpiredIngredients();
     }
 
     /**

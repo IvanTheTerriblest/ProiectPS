@@ -17,7 +17,7 @@ public class RecipesController {
     public final RecipesContract recipesService;
     @Autowired
 
-    public RecipesController(RecipesContract recipesService) {
+    public RecipesController(RecipesService recipesService) {
         this.recipesService = recipesService;
     }
 
