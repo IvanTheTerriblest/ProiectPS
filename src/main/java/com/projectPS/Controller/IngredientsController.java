@@ -31,21 +31,47 @@ public class IngredientsController {
     public List<Ingredients> getIngredients(){
         return ingredientsService.getIngredients();
     }
+    /**
+     * Get an ingredient by ID.
+     *
+     * @param ingredientId The ID of the ingredient
+     * @return The ingredient with the specified ID, if it exists
+     */
 
     @GetMapping(path="{id}")
     public Optional<Ingredients> getIngredient(@PathVariable("id") Long ingredientId){
        return ingredientsService.findById(ingredientId);
     }
 
+    /**
+     * Get an ingredient by name.
+     *
+     * @param name The name of the ingredient
+     * @return The ingredient with the specified name, if it exists
+     */
+
     @GetMapping(path="/nume/{name}")
     public Ingredients getIngredientByName(@PathVariable("name") String name){
         return ingredientsService.findByName(name);
     }
 
+    /**
+     * Get ingredients by expiration date.
+     *
+     * @param date The expiration date
+     * @return A list of ingredients with the specified expiration date
+     */
+
     @GetMapping(path="/data/{date}")
     public List<Ingredients> getIngredientByName(@PathVariable("date") Date date){
         return ingredientsService.findByExpirationDate(date);
     }
+
+    /**
+     * Get expired ingredients.
+     *
+     * @return A list of expired ingredients
+     */
 
     @GetMapping(path="/expired")
     public List<Ingredients> getExpiredIngredients(){

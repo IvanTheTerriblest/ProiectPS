@@ -42,16 +42,34 @@ public class Recipes {
         this.timeForCooking = timeForCooking;
     }
 
+    /**
+     * Subscribe a subscriber to receive updates about this recipe.
+     *
+     * @param sub The subscriber to subscribe
+     */
+
     public void subscribe(Subscriber sub)
     {
         subs.add(sub);
 
     }
 
+    /**
+     * Unsubscribe a subscriber from receiving updates about this recipe.
+     *
+     * @param sub The subscriber to unsubscribe
+     */
+
     public void unsubscribe(Subscriber sub)
     {
         subs.remove(sub);
     }
+
+    /**
+     * Notify all subscribers about the recipe.
+     *
+     * @param rec The recipe to notify subscribers about
+     */
 
     public void notifySubscribers(String rec)
     {
@@ -59,6 +77,12 @@ public class Recipes {
             sub.update(rec);
         }
     }
+
+    /**
+     * Check if the recipe is ready to cook and notify subscribers if it is.
+     *
+     * @param rec The recipe to check and notify subscribers about
+     */
 
     public void readyToCook(Recipes rec){
         for (Ingredients ing : rec.getIngredientsList()){

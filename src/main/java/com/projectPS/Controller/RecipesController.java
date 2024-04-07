@@ -32,11 +32,22 @@ public class RecipesController {
         return recipesService.getRecipes();
     }
 
+    /**
+     * Find fast recipes.
+     *
+     * @return A list of fast recipes
+     */
+
     @GetMapping(path="/fastFood")
     public List<Recipes> findFastRecipes(){
         return recipesService.findFastRecipes();
     }
-
+    /**
+     * Get a recipe by ID.
+     *
+     * @param recipesId The ID of the recipe
+     * @return The recipe with the specified ID, if it exists
+     */
     @GetMapping(path="{id}")
     public Optional<Recipes> getRecipes(@PathVariable("id") Long recipesId){
         return recipesService.findById(recipesId);
