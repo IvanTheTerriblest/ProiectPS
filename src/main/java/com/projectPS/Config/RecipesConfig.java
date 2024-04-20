@@ -2,6 +2,7 @@ package com.projectPS.Config;
 
 import com.projectPS.Model.Ingredients;
 import com.projectPS.Model.Recipes;
+import com.projectPS.Observer.Person;
 import com.projectPS.Observer.Subscriber;
 import com.projectPS.Repository.IngredientsRepository;
 import com.projectPS.Repository.RecipesRepository;
@@ -48,13 +49,9 @@ public class RecipesConfig {
                     tomato,cucumber,cabbage), new Time(0,10,0));
             omlett = recipesService.saveRecipes(omlett);
             salad = recipesService.saveRecipes(salad);
-            Subscriber ivan = new Subscriber("Chef Ivan");
+            Person ivan = new Person("Chef Ivan");
             omlett.subscribe(ivan);
-            ivan.subscribeRecipies(omlett);
-            omlett.readyToCook(omlett);
             salad.subscribe(ivan);
-            ivan.subscribeRecipies(salad);
-            salad.readyToCook(salad);
 
         };
     }

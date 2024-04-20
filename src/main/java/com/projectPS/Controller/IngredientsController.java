@@ -2,6 +2,7 @@ package com.projectPS.Controller;
 
 import com.projectPS.Contract.IngredientsContract;
 import com.projectPS.Model.Ingredients;
+import com.projectPS.Model.Recipes;
 import com.projectPS.Service.IngredientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +30,7 @@ public class IngredientsController {
      */
     @GetMapping
     public List<Ingredients> getIngredients(){
+
         return ingredientsService.getIngredients();
     }
     /**

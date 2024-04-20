@@ -1,5 +1,7 @@
 package com.projectPS.Model;
 
+import com.projectPS.Observer.RecipeObserver;
+import com.projectPS.Observer.Subject;
 import com.projectPS.Observer.Subscriber;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,7 +20,7 @@ import java.util.List;
 @Entity
 @Table
 
-public class Recipes {
+public class Recipes implements Subject {
     @Id
     @SequenceGenerator(name="recipes_sequence",
             sequenceName = "recipes_sequence",
@@ -33,13 +35,14 @@ public class Recipes {
     private List<Ingredients> ingredientsList;
     private Time timeForCooking;
     @Transient
-    private List<Subscriber> subs = new ArrayList<>();
+    private List<RecipeObserver> observers = new ArrayList<>();
 
 
     public Recipes(String name, List<Ingredients> ingredientsList, Time timeForCooking) {
         this.name = name;
         this.ingredientsList = ingredientsList;
         this.timeForCooking = timeForCooking;
+
     }
 
     /**
@@ -48,10 +51,10 @@ public class Recipes {
      * @param sub The subscriber to subscribe
      */
 
-    public void subscribe(Subscriber sub)
+    public void subscribe(RecipeObserver sub)
     {
-        subs.add(sub);
-
+        observers.add(sub);
+        notifySubscribers();
     }
 
     /**
@@ -60,9 +63,9 @@ public class Recipes {
      * @param sub The subscriber to unsubscribe
      */
 
-    public void unsubscribe(Subscriber sub)
+    public void unsubscribe(RecipeObserver sub)
     {
-        subs.remove(sub);
+        observers.remove(sub);
     }
 
     /**
@@ -71,10 +74,10 @@ public class Recipes {
      * @param rec The recipe to notify subscribers about
      */
 
-    public void notifySubscribers(String rec)
+    public void notifySubscribers()
     {
-        for(Subscriber sub: subs){
-            sub.update(rec);
+        for(RecipeObserver sub: observers){
+            sub.update(this);
         }
     }
 
@@ -84,14 +87,6 @@ public class Recipes {
      * @param rec The recipe to check and notify subscribers about
      */
 
-    public void readyToCook(Recipes rec){
-        for (Ingredients ing : rec.getIngredientsList()){
-            if (ing.getQuantity()==0){
-                return;
-            }
-        }
-        notifySubscribers(rec.getName());
-    }
 
 
     public List<Ingredients> getIngredientsList() {

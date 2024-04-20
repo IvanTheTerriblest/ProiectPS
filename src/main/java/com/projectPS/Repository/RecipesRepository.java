@@ -13,6 +13,6 @@ import java.util.List;
 
 public interface RecipesRepository extends JpaRepository<Recipes,Long> {
     Recipes findByName(String name);
-    @Query("Select r from Recipes r where String(r.timeForCooking) <=String(001000)")
+    @Query("Select r from Recipes r where r.timeForCooking != null")
     List<Recipes> findFastRecipes();
 }
