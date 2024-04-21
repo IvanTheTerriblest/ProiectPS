@@ -44,6 +44,17 @@ public class RecipesController {
     public List<Recipes> findFastRecipes(){
         return recipesService.findFastRecipes();
     }
+
+    /**
+     * Find slow cooked recipes.
+     *
+     * @return A list of fast recipes
+     */
+
+    @GetMapping(path="/slowFood")
+    public List<Recipes> findSlowCookedRecipes(){
+        return recipesService.findSlowCookedRecipes();
+    }
     /**
      * Get a recipe by ID.
      *

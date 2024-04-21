@@ -37,7 +37,6 @@ public class IngredientsService implements IngredientsContract {
 
     public List<Ingredients> getIngredients(){
         return ingredientsRepository.findAll();
-        //return List.of(new Ingredients(1L,"Egg", LocalDate.of(2024, Month.APRIL,6),10));
     }
 
     /**
@@ -72,10 +71,23 @@ public class IngredientsService implements IngredientsContract {
         return ingredientsRepository.findById(id);
     }
 
+    /**
+     * Retrieves ingredients by expiration date.
+     *
+     * @param date the expiration date
+     * @return a list of ingredients expiring on the specified date
+     */
+
     @Override
     public List<Ingredients> findByExpirationDate(Date date) {
         return ingredientsRepository.findByExpirationDate(date);
     }
+
+    /**
+     * Retrieves expired ingredients.
+     *
+     * @return a list of expired ingredients
+     */
     public List<Ingredients> findExpiredIngredients() {
         return ingredientsRepository.findExpiredIngredients();
     }
@@ -99,7 +111,7 @@ public class IngredientsService implements IngredientsContract {
     public void deleteIngredient(Long ingredientId) {
        boolean exists= ingredientsRepository.existsById(ingredientId);
        if (!exists){
-           throw new IllegalStateException("Ingredient with id " + ingredientId +"does not exist");
+           throw new IllegalStateException("Ingredient with id " + ingredientId +" does not exist");
 
        }
        ingredientsRepository.deleteById(ingredientId);
@@ -115,7 +127,7 @@ public class IngredientsService implements IngredientsContract {
      */
 
     @Transactional
-    public void updateIngredient(Long ingredientId,
+    public Ingredients updateIngredient(Long ingredientId,
                                  String name,
                                  LocalDate expirationDate,
                                  Integer quantity) {
@@ -129,5 +141,8 @@ public class IngredientsService implements IngredientsContract {
         if (quantity !=null && !Objects.equals(ingredient.getQuantity(),quantity)){
             ingredient.setQuantity(quantity);
         }
+
+        Ingredients value = new Ingredients(ingredientId,name,expirationDate,quantity);
+        return value;
     }
 }

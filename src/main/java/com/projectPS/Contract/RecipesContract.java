@@ -5,6 +5,7 @@ import com.projectPS.Model.Recipes;
 import jakarta.transaction.Transactional;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,12 +19,14 @@ public interface RecipesContract {
     public void deleteRecipe(Long recipeId);
 
 
-    public void updateRecipe(Long recipeId,
+    public Recipes updateRecipe(Long recipeId,
                              String name,
                              List<Ingredients> ingredientsList ,
-                             Time timeForCooking);
+                                LocalTime timeForCooking);
 
     public List<Recipes> findFastRecipes();
+
+    public List<Recipes> findSlowCookedRecipes();
 
     public Optional<Recipes> findById(Long id);
 }

@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.Month;
 import java.util.List;
 
@@ -44,9 +45,9 @@ public class RecipesConfig {
             cucumber = service.saveIngredient(cucumber);
             bacon = service.saveIngredient(bacon);
             Recipes omlett = new Recipes("Omlett", List.of(egg, tomato, bacon),
-                new Time(0,10,0));
+                    LocalTime.of(0, 10, 0));
             Recipes salad = new Recipes("Salad", List.of(
-                    tomato,cucumber,cabbage), new Time(0,10,0));
+                    tomato,cucumber,cabbage), LocalTime.of(0,10,0,0));
             omlett = recipesService.saveRecipes(omlett);
             salad = recipesService.saveRecipes(salad);
             Person ivan = new Person("Chef Ivan");

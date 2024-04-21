@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -22,8 +23,24 @@ public class RecipesService implements RecipesContract {
     public RecipesService(RecipesRepository recipesRepository) {
         this.recipesRepository = recipesRepository;
     }
+
+    /**
+     * Retrieves fast recipes.
+     *
+     * @return a list of fast recipes
+     */
     public List<Recipes> findFastRecipes(){
         return recipesRepository.findFastRecipes();
+    }
+
+    /**
+     * Retrieves slow-cooked recipes.
+     *
+     * @return a list of slow-cooked recipes
+     */
+
+    public List<Recipes> findSlowCookedRecipes(){
+        return recipesRepository.findSlowCookedRecipes();
     }
 
     /**
@@ -91,10 +108,10 @@ public class RecipesService implements RecipesContract {
      */
 
     @Transactional
-    public void updateRecipe(Long recipeId,
+    public Recipes updateRecipe(Long recipeId,
                                  String name,
                                  List<Ingredients> ingredientsList ,
-                                 Time timeForCooking) {
+                                LocalTime timeForCooking) {
         Recipes recipe = recipesRepository.findById(recipeId).orElseThrow();
         if (name !=null && name.length()>0 && !Objects.equals(recipe.getName(),name)){
             recipe.setName(name);
@@ -105,5 +122,7 @@ public class RecipesService implements RecipesContract {
         if (timeForCooking !=null && !Objects.equals(recipe.getTimeForCooking(),timeForCooking)){
             recipe.setTimeForCooking(timeForCooking);
         }
+        Recipes value = new Recipes(recipeId,name,ingredientsList,timeForCooking);
+        return value;
     }
 }

@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface IngredientsContract {
     public List<Ingredients> getIngredients();
     public Ingredients saveIngredient(Ingredients ingredients);
-    public void updateIngredient(Long ingredientId,
+    public Ingredients updateIngredient(Long ingredientId,
                                         String name,
                                         LocalDate expirationDate,
                                         Integer quantity);

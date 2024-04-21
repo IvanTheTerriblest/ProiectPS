@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,12 +34,20 @@ public class Recipes implements Subject {
     private String name;
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Ingredients> ingredientsList;
-    private Time timeForCooking;
+    private LocalTime timeForCooking;
     @Transient
     private List<RecipeObserver> observers = new ArrayList<>();
 
+    public Recipes(Long id,String name, List<Ingredients> ingredientsList, LocalTime timeForCooking) {
+        this.id=id;
+        this.name = name;
+        this.ingredientsList = ingredientsList;
+        this.timeForCooking = timeForCooking;
 
-    public Recipes(String name, List<Ingredients> ingredientsList, Time timeForCooking) {
+    }
+
+
+    public Recipes(String name, List<Ingredients> ingredientsList, LocalTime timeForCooking) {
         this.name = name;
         this.ingredientsList = ingredientsList;
         this.timeForCooking = timeForCooking;
@@ -97,11 +106,11 @@ public class Recipes implements Subject {
         this.ingredientsList = ingredientsList;
     }
 
-    public Time getTimeForCooking() {
+    public LocalTime getTimeForCooking() {
         return timeForCooking;
     }
 
-    public void setTimeForCooking(Time timeForCooking) {
+    public void setTimeForCooking(LocalTime timeForCooking) {
         this.timeForCooking = timeForCooking;
     }
 
