@@ -65,7 +65,7 @@ public class IngredientsController {
      */
 
     @GetMapping(path="/data/{date}")
-    public List<Ingredients> getIngredientByName(@PathVariable("date") Date date){
+    public List<Ingredients> getIngredientByDate(@PathVariable("date") Date date){
         return ingredientsService.findByExpirationDate(date);
     }
 
