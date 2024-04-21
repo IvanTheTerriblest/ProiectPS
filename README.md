@@ -1,13 +1,29 @@
 # Cartea de bucate
 
 Această aplicație reprezintă un figider în care adminul poate adăuga diferite alimente. 
+The "Cartea de bucate" application serve as your own virtual inteligent fridge. Just like 
+your fridge from home you have to fill it with desired or fresh bought ingredients.
+Additionally to a normal fridge "Carte de bucate" tells you what recipes you can cook with 
+the ingredients inside.
 
 ## Features
 
-- Alimentele au o dată de expirare
-- Userul este notificat atunci când un aliment a expirate
-- Avem anumtite feluri de mâncare care pot fi gătite cu alimentele din frigider
-- Putem avea anumite sugestii de rețete pentru care avem deja o parte din alimente
+- Expiration date on every ingredient
+- The user is notifyed if an ingredient has gone bad
+- A wide range of recipes that you can cook with the items in your fridge
+- Subscribers to certain foods get notify when a recepie is ready to be cooked
+
+## Relaltionship between tables
+
+Having just a few relations between tables is what makes this application perfect for 
+an introduction for a full stack project.
+The user table is missing because every user is on his specific local host. In the future 
+the app could be upgraded for a specific user using a log-in method.
+-Ingredients to Recipes: Many-to-Many. An ingredient can be found in more than one recipe
+and a recipe can have more than one ingredient.
+
+
+
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
