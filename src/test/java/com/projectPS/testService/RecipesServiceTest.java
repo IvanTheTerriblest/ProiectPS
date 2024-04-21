@@ -69,8 +69,7 @@ public class RecipesServiceTest {
     }
     @Test
     public void testDeleteRecipe(){
-        Ingredients potato = new Ingredients(15L,"potato", LocalDate.of(2024, Month.APRIL,6), 10);
-        Recipes recipe = new Recipes(2L,"fries", List.of(potato),LocalTime.of(0,20,0));
+        when(recipesRepository.existsById(2L)).thenReturn(true);
         this.recipesService.deleteRecipe(2L);
         Mockito.verify(recipesRepository).deleteById(2L);
     }

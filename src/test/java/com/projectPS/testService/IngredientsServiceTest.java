@@ -80,16 +80,17 @@ public class IngredientsServiceTest {
         List<Ingredients> ingredients = new ArrayList<>();
         ingredients.add(milk);
         ingredients.add(mushrooms);
-        List<Ingredients> result = new ArrayList<>();
-        result.add(mushrooms);
-        when(ingredientsService.findExpiredIngredients()).thenReturn(result);
-        ingredientsService.findExpiredIngredients();
+        List<Ingredients> result;
+//        result.add(mushrooms);
+        when(ingredientsRepository.findExpiredIngredients()).thenReturn(List.of(mushrooms));
+        result = ingredientsService.findExpiredIngredients();
         Mockito.verify(ingredientsRepository).findExpiredIngredients();
-        assertEquals(result,ingredientsService.findExpiredIngredients());
+        assertEquals(result,List.of(mushrooms));
     }
 
     @Test
     public void testDeleteIngredient(){
+        when(ingredientsRepository.existsById(2L)).thenReturn(true);
         this.ingredientsService.deleteIngredient(2L);
         Mockito.verify(ingredientsRepository).deleteById(2L);
     }
