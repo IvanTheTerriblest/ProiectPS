@@ -21,6 +21,10 @@ the app could be upgraded for a specific user using a log-in method.
 -Ingredients to Recipes: Many-to-Many. An ingredient can be found in more than one recipe
 and a recipe can have more than one ingredient.
 
+<p align="center">
+  <img src="https://github.com/IvanTheTerriblest/ProiectPS/blob/main/Database%20ER%20diagram%20(crow's%20foot).jpeg" width="600">
+</p>
+
 # Implementation
 
 ## Backend Development
