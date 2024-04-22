@@ -1,9 +1,8 @@
 package com.projectPS.testService;
 
-import com.projectPS.Contract.IngredientsContract;
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Repository.IngredientsRepository;
-import com.projectPS.Service.IngredientsService;
+import com.projectPS.model.Ingredients;
+import com.projectPS.repository.IngredientsRepository;
+import com.projectPS.service.IngredientsService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -81,7 +80,6 @@ public class IngredientsServiceTest {
         ingredients.add(milk);
         ingredients.add(mushrooms);
         List<Ingredients> result;
-//        result.add(mushrooms);
         when(ingredientsRepository.findExpiredIngredients()).thenReturn(List.of(mushrooms));
         result = ingredientsService.findExpiredIngredients();
         Mockito.verify(ingredientsRepository).findExpiredIngredients();

@@ -1,24 +1,19 @@
 package com.projectPS.testService;
 
-import com.projectPS.Contract.IngredientsContract;
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Model.Recipes;
-import com.projectPS.Repository.IngredientsRepository;
-import com.projectPS.Repository.RecipesRepository;
-import com.projectPS.Service.IngredientsService;
-import com.projectPS.Service.RecipesService;
+import com.projectPS.model.Ingredients;
+import com.projectPS.model.Recipes;
+import com.projectPS.repository.RecipesRepository;
+import com.projectPS.service.RecipesService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Month;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,8 +1,8 @@
-package com.projectPS.Service;
+package com.projectPS.service;
 
-import com.projectPS.Contract.IngredientsContract;
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Repository.IngredientsRepository;
+import com.projectPS.contract.IngredientsContract;
+import com.projectPS.model.Ingredients;
+import com.projectPS.repository.IngredientsRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

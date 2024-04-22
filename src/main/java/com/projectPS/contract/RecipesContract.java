@@ -1,13 +1,10 @@
-package com.projectPS.Contract;
+package com.projectPS.contract;
 
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Model.Recipes;
-import jakarta.transaction.Transactional;
+import com.projectPS.model.Ingredients;
+import com.projectPS.model.Recipes;
 
-import java.sql.Time;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 public interface RecipesContract {

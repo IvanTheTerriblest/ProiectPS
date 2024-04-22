@@ -1,13 +1,11 @@
-package com.projectPS.Controller;
+package com.projectPS.controller;
 
-import com.projectPS.Contract.IngredientsContract;
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Model.Recipes;
-import com.projectPS.Service.IngredientsService;
+import com.projectPS.contract.IngredientsContract;
+import com.projectPS.model.Ingredients;
+import com.projectPS.service.IngredientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;

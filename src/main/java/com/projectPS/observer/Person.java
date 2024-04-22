@@ -1,10 +1,7 @@
-package com.projectPS.Observer;
+package com.projectPS.observer;
 
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Model.Recipes;
-
-import java.util.Observable;
-import java.util.Observer;
+import com.projectPS.model.Ingredients;
+import com.projectPS.model.Recipes;
 
 public class Person implements RecipeObserver {
     public Person(String name) {

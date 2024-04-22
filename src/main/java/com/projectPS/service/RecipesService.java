@@ -1,15 +1,13 @@
-package com.projectPS.Service;
+package com.projectPS.service;
 
-import com.projectPS.Contract.RecipesContract;
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Model.Recipes;
-import com.projectPS.Repository.RecipesRepository;
+import com.projectPS.contract.RecipesContract;
+import com.projectPS.model.Ingredients;
+import com.projectPS.model.Recipes;
+import com.projectPS.repository.RecipesRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Time;
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;

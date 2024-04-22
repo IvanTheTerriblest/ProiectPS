@@ -1,6 +1,6 @@
-package com.projectPS.Contract;
+package com.projectPS.contract;
 
-import com.projectPS.Model.Ingredients;
+import com.projectPS.model.Ingredients;
 
 import java.time.LocalDate;
 import java.util.Date;

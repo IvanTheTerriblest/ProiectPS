@@ -1,4 +1,4 @@
-package com.projectPS.Testing;
+package com.projectPS.testing;
 
 public enum PassType {
     WEAK,MEDIUM,COMPLEX

@@ -1,19 +1,14 @@
-package com.projectPS.Config;
+package com.projectPS.config;
 
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Model.Recipes;
-import com.projectPS.Observer.Person;
-import com.projectPS.Observer.Subscriber;
-import com.projectPS.Repository.IngredientsRepository;
-import com.projectPS.Repository.RecipesRepository;
-import com.projectPS.Service.IngredientsService;
-import com.projectPS.Service.RecipesService;
-import lombok.AllArgsConstructor;
+import com.projectPS.model.Ingredients;
+import com.projectPS.model.Recipes;
+import com.projectPS.observer.Person;
+import com.projectPS.service.IngredientsService;
+import com.projectPS.service.RecipesService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Month;

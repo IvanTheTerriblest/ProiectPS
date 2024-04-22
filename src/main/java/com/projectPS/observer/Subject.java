@@ -1,4 +1,4 @@
-package com.projectPS.Observer;
+package com.projectPS.observer;
 
 
 public interface Subject {

@@ -1,6 +1,6 @@
-package com.projectPS.Observer;
+package com.projectPS.observer;
 
-import com.projectPS.Model.Recipes;
+import com.projectPS.model.Recipes;
 
 /**
  * Represents a subscriber who receives updates about recipes.

@@ -1,9 +1,8 @@
-package com.projectPS.Controller;
+package com.projectPS.controller;
 
-import com.projectPS.Contract.RecipesContract;
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Model.Recipes;
-import com.projectPS.Service.RecipesService;
+import com.projectPS.contract.RecipesContract;
+import com.projectPS.model.Recipes;
+import com.projectPS.service.RecipesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

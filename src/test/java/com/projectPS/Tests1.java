@@ -1,9 +1,8 @@
 package com.projectPS;
 
-import com.projectPS.Contract.IngredientsContract;
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Repository.IngredientsRepository;
-import com.projectPS.Service.IngredientsService;
+import com.projectPS.model.Ingredients;
+import com.projectPS.repository.IngredientsRepository;
+import com.projectPS.service.IngredientsService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -12,7 +11,6 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Date;
 
 public class Tests1 {
     private IngredientsService ingredientsService;

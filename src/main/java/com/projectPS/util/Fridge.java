@@ -1,6 +1,6 @@
-package com.projectPS.Util;
+package com.projectPS.util;
 
-import com.projectPS.Model.Ingredients;
+import com.projectPS.model.Ingredients;
 
 import java.util.List;
 

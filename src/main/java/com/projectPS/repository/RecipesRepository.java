@@ -1,12 +1,10 @@
-package com.projectPS.Repository;
+package com.projectPS.repository;
 
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Model.Recipes;
+import com.projectPS.model.Recipes;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Time;
 import java.util.List;
 
 @Repository

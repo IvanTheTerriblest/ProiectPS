@@ -1,7 +1,7 @@
 package com.projectPS;
 
-import com.projectPS.Testing.Cezar;
-import com.projectPS.Testing.PassType;
+import com.projectPS.testing.Cezar;
+import com.projectPS.testing.PassType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

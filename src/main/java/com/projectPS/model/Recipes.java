@@ -1,15 +1,13 @@
-package com.projectPS.Model;
+package com.projectPS.model;
 
-import com.projectPS.Observer.RecipeObserver;
-import com.projectPS.Observer.Subject;
-import com.projectPS.Observer.Subscriber;
+import com.projectPS.observer.RecipeObserver;
+import com.projectPS.observer.Subject;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.sql.Time;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;

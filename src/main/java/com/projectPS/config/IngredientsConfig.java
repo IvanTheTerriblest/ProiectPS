@@ -1,14 +1,9 @@
-package com.projectPS.Config;
+package com.projectPS.config;
 
-import com.projectPS.Model.Ingredients;
-import com.projectPS.Repository.IngredientsRepository;
+import com.projectPS.repository.IngredientsRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.List;
 
 @Configuration
 

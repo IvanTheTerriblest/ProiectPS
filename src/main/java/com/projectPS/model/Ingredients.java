@@ -1,9 +1,8 @@
-package com.projectPS.Model;
+package com.projectPS.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 
-import javax.management.ConstructorParameters;
 import java.time.LocalDate;
 @Data
 @NoArgsConstructor
