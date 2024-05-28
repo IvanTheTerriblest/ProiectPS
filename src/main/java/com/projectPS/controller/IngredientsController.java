@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/ingredients")
+@CrossOrigin
 
 public class IngredientsController {
     private final IngredientsContract ingredientsService;

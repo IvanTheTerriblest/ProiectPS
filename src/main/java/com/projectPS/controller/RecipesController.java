@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/recipes")
+@CrossOrigin
 
 public class RecipesController {
 
