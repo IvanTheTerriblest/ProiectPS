@@ -21,6 +21,8 @@ public interface RecipesContract {
                              List<Ingredients> ingredientsList ,
                                 LocalTime timeForCooking);
 
+    public List<String> getRecipeIngredients(Long id);
+
     public List<Recipes> findFastRecipes();
 
     public List<Recipes> findSlowCookedRecipes();

@@ -7,16 +7,14 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import KitchenIcon from '@mui/icons-material/Kitchen';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
+import { Link } from 'react-router-dom';
 
 const pages = [
-  { name: 'Ingredients', url: 'http://localhost:6969/ingredients' },
-  { name: 'Recipes', url: 'http://localhost:6969/recipes' } // Replace '#' with the actual URL if needed
+  { name: 'Ingredients', url: '/ingredients' },
+  { name: 'Recipes', url: '/recipes' }
 ];
 
 function ResponsiveAppBar() {
@@ -38,8 +36,8 @@ function ResponsiveAppBar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="http://localhost:3000/"
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -84,7 +82,7 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.name}</Typography>
+                  <Typography textAlign="center" component={Link} to={page.url} style={{ textDecoration: 'none', color: 'inherit' }}>{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -93,8 +91,8 @@ function ResponsiveAppBar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -112,8 +110,8 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page.name}
-                href={page.url}
-                
+                component={Link}
+                to={page.url}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page.name}

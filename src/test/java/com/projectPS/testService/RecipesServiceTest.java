@@ -2,6 +2,7 @@ package com.projectPS.testService;
 
 import com.projectPS.model.Ingredients;
 import com.projectPS.model.Recipes;
+import com.projectPS.repository.IngredientsRepository;
 import com.projectPS.repository.RecipesRepository;
 import com.projectPS.service.RecipesService;
 import org.junit.Before;
@@ -23,12 +24,14 @@ public class RecipesServiceTest {
     private RecipesService recipesService;
     @Mock
     private RecipesRepository recipesRepository;
+    @Mock
+    private IngredientsRepository ingredientsRepository;
 
 
     @Before
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-        this.recipesService = new RecipesService(recipesRepository);
+        this.recipesService = new RecipesService(recipesRepository,ingredientsRepository);
     }
 
     @Test

@@ -74,9 +74,10 @@ public class RecipesController {
      */
 
     @PostMapping
-    public Recipes addRecipes(@RequestBody Recipes recipes){
+    public Recipes addRecipes(@RequestBody Recipes recipes) {
         return recipesService.addRecipes(recipes);
     }
+
 
     /**
      * Deletes a recipe by ID.
@@ -104,6 +105,11 @@ public class RecipesController {
     {
         recipesService.updateRecipe(recipeId,recipe.getName()
                 ,recipe.getIngredientsList(),recipe.getTimeForCooking());
+    }
+
+    @GetMapping(path = "{recipeId}/ingredients")
+    public List<String> getRecipeIngredients(@PathVariable("recipeId") Long recipeId) {
+        return recipesService.getRecipeIngredients(recipeId);
     }
 
 }

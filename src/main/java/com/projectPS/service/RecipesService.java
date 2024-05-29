@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -70,6 +71,8 @@ public class RecipesService implements RecipesContract {
 
     }
 
+
+
     /**
      * Adds a recipe.
      *
@@ -122,5 +125,24 @@ public class RecipesService implements RecipesContract {
         }
         Recipes value = new Recipes(recipeId,name,ingredientsList,timeForCooking);
         return value;
+    }
+
+    @Override
+    public List<String> getRecipeIngredients(Long id) {
+        // Fetch the recipe by its ID
+        Recipes recipe = recipesRepository.findById(id).orElse(null);
+
+        // Initialize a list to store ingredient names
+        List<String> ingredientNames = new ArrayList<>();
+
+        // Check if the recipe exists
+        if (recipe != null) {
+            // Iterate over the list of ingredients and extract their names
+            for (Ingredients ingredient : recipe.getIngredientsList()) {
+                ingredientNames.add(ingredient.getName());
+            }
+        }
+
+        return ingredientNames;
     }
 }

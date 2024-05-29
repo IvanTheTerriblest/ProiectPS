@@ -1,38 +1,55 @@
-.App {
+.fridge {
+  width: 400px;
+  margin: 0 auto;
+  border: 6px solid #6d6d6d;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fridge-door {
+  width: 50%;
+  height: 100%;
+  background-color: #6d6d6d;
+  float: left;
+}
+
+.fridge-content {
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fridge h1 {
+  font-size: 2em;
+  color: #333333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fridge p {
+  font-size: 1.2em;
+  color: #666666;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.shelf {
+  margin-top: 20px;
+  display: none;
+}
+
+.shelf.visible {
+  display: block;
+}
+
+.shelf-item {
+  display: block;
+  width: 100px;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: #4CAF50;
   color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shelf-item:hover {
+  background-color: #45a049;
 }
