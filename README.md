@@ -80,7 +80,46 @@ The structure is based of MVC protocol, each layer beeing easy to manage
 The class diagram describes the structure of the system,showing the system's classes and the relationship among objects.
 ![Class diagram](Class.png)
 
+# Use case diagram
+The use case diagram shows the possible interactions of a user with the system.
 
+## Actors 
+- User: Everyone has their own fridge so the user is both the client and the admin of the fridge. It has access to all functionalities
+
+## Use cases 
+- Add ingredient: The user can add an ingredient by specifing the name, expiration date and quantity
+- Delete ingredient: The user can delete an ingredient that already exists in the database by pressing a button
+- Update ingredient: The user can update any of the ingredient atributes
+- Show all ingredients: The user can see all of the ingredients from the database
+- Show expired ingredients: The user ca see all of the ingredients that are past their expiration date
+- Search ingredient: The user can search for an ingredint by typing their name
+- Add recipe: The user can add a recipe by specifing the name, ingredients list, date and time for cooking
+- Delete recipe: The user can delete a recipe that already exists in the database by pressing a button
+- Update recipe: The user can update any of the recipe atributes
+- Show all recipes: The user can see all of the recipes from the database
+- Show fast cooked recipes: The user can see all of the recipes that can be cooked in less than 10 minutes
+- Show slow cooked recipes: The user can see all of the recipes that can be cooked in more than 3 hours
+
+![Use case diagram](UseCase.png)
+
+# Front-end documentation
+
+The front-end of the "Cartea de bucate" application is desigend to be an easy to use interface
+
+## Home page
+The home page shows the main functionalities of the application at a click of a button.
+
+## Ingredients
+The user can view and manage the ingredients 
+
+## Recipes
+The user can view and manage the recipes
+
+# Implementation
+The front-end of the application is built using the thechnologies:
+- JavaScript: To implement the more complex features
+- CSS: For styling the web pages
+- HTML: For structuring the content and layout of the web pages.
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
