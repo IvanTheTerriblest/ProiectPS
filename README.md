@@ -77,7 +77,8 @@ The structure is based of MVC protocol, each layer beeing easy to manage
 - Unit tests implemented across the layers to ensure functionality and  reliability
 
 # Class diagram 
-The class diagram describes the structure of the system,showing the system's classes and the relationship among objects
+The class diagram describes the structure of the system,showing the system's classes and the relationship among objects.
+![Class diagram](Class.png)
 
 
 
