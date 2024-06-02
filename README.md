@@ -1,5 +1,6 @@
 # Cartea de bucate
 
+Această aplicație reprezintă un figider în care adminul poate adăuga diferite alimente. 
 The "Cartea de bucate" application serve as your own virtual inteligent fridge. Just like 
 your fridge from home you have to fill it with desired or fresh bought ingredients.
 Additionally to a normal fridge "Carte de bucate" tells you what recipes you can cook with 
@@ -21,10 +22,6 @@ the app could be upgraded for a specific user using a log-in method.
 -Ingredients to Recipes: Many-to-Many. An ingredient can be found in more than one recipe
 and a recipe can have more than one ingredient.
 
-<p align="center">
-  <img src="https://github.com/IvanTheTerriblest/ProiectPS/blob/main/Database%20ER%20diagram%20(crow's%20foot).jpeg" width="600">
-</p>
-
 # Implementation
 
 ## Backend Development
@@ -32,21 +29,21 @@ and a recipe can have more than one ingredient.
 - Application entry point
 - Handles HTTP request and lets the appropriate controller to handle them
 
-## Controller
+# Controller
 - An intermediary layer between HTTP API and Service
 - Validates the incoming requests, and gives commands to the service layer
 - Returns responses after the logic execution
 
-## Service
+# Service
 - Contains the logic of the application
 - Coordinates the application's operations and manages the flow of data to and from the data layer.
 
-## Contratct
+# Contratct
 - Performs CRUD operations by comunicating with the database
 - Uses JPA Repository to perform all of the operations
 - Used to decoup the app
 
-## Model 
+# Model 
 - Defines the structures of all the tables in the database
 
 The structure is based of MVC protocol, each layer beeing easy to manage
@@ -58,7 +55,7 @@ The structure is based of MVC protocol, each layer beeing easy to manage
 - Delete: Items that are no longer relevant
 
 # API Development
-## Ingredients table:
+# Ingredients table:
 - /ingredients Retrive all ingredients
 - /ingredients/{id} Retrive the ingredient with the specific id
 - /ingredients/nume/{name} Retrive the ingredient with the specific name
@@ -66,7 +63,7 @@ The structure is based of MVC protocol, each layer beeing easy to manage
 - /ingredients/expired Retrive the ingredients that had gone bad
 - /ingredients/{id} Deletes the ingredient with the specific id
 
-## Recipes table:
+# Recipes table:
 - /recipes Retrive all recipes
 - /recipes/{id} Retrive the recipes with the specific id
 - /recipes/fastFood Retrive the recipes with a cooking time lower than 10 minutes

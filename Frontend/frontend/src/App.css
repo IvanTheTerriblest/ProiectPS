@@ -1,0 +1,55 @@
+.fridge {
+  width: 400px;
+  margin: 0 auto;
+  border: 6px solid #6d6d6d;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fridge-door {
+  width: 50%;
+  height: 100%;
+  background-color: #6d6d6d;
+  float: left;
+}
+
+.fridge-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.fridge h1 {
+  font-size: 2em;
+  color: #333333;
+}
+
+.fridge p {
+  font-size: 1.2em;
+  color: #666666;
+}
+
+.shelf {
+  margin-top: 20px;
+  display: none;
+}
+
+.shelf.visible {
+  display: block;
+}
+
+.shelf-item {
+  display: block;
+  width: 100px;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.shelf-item:hover {
+  background-color: #45a049;
+}
