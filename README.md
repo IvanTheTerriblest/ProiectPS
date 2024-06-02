@@ -76,6 +76,10 @@ The structure is based of MVC protocol, each layer beeing easy to manage
 # Unit Testing 
 - Unit tests implemented across the layers to ensure functionality and  reliability
 
+# Class diagram 
+The class diagram describes the structure of the system,showing the system's classes and the relationship among objects
+
+
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
