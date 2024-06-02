@@ -78,6 +78,7 @@ The structure is based of MVC protocol, each layer beeing easy to manage
 
 # Class diagram 
 The class diagram describes the structure of the system,showing the system's classes and the relationship among objects.
+
 ![Class diagram](Class.png)
 
 # Use case diagram
